@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="My 6th webpage">
+    <meta name="keywordss" content="Hello, World! website">
+    <meta name="author" content="Jonathan Pasco-Arnone">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My webpage</title>
+    <link rel="stylesheet" href="mystyle.css">
+  </head>
+  <body>
+    <h2>If you want to enter the museum please enter your age and the current date to see if you are eligable for student pricing</h2>
+    <p>To insure complete accuracy, please do not use capitals or extra spaces</p>
+    <label>Age:</label>
+    <input id="age-id">
+    <br><br>
+    <label>Day of the week:</label>
+    <input id="date-id">
+    <br><br>
+    <button id="submit">Submit</button>
+    <br>
+    <h3 id="answer"></h3>
+    <script>
+      let age;
+      let date;
+      function museumCriteria() {
+        age = document.getElementById("age-id").value;
+        date = document.getElementById("date-id").value;
+        if ((date == "tuesday" || date == "thursday") || (age > 12 && age < 21)) {
+          document.getElementById("answer").innerHTML = ("You're eligible for student pricing!");
+        } else {
+          document.getElementById("answer").innerHTML = ("You must pay regular price.");
+        }
+      }
+      document.getElementById("submit").addEventListener("click",museumCriteria);
+    </script>
+  </body>
+</html>
